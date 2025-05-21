@@ -1,0 +1,23 @@
+# README - Práctica 3: Cliente-Servidor con FIFOs
+
+## Requisitos previos
+
+- Python 3 instalado.
+- Módulo `prctl` instalado:
+
+  pip install python-prctl
+
+## Pasos para ejecutar
+
+1. Abre una primera terminal y ejecuta el servidor:
+
+  make serv3
+
+2. Abre una segunda terminal y ejecuta el cliente:
+
+  make cli3
+
+## Notas
+
+- El servidor debe ejecutarse antes que el cliente.
+- Las FIFOs se crean en /tmp y se eliminan automáticamente al finalizar.

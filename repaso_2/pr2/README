@@ -1,0 +1,17 @@
+# Práctica 2: Cliente-Servidor mediante pipes
+
+## Ejecución
+
+1. Asegúrate de tener Python 3 instalado y el módulo `prctl`. Si no lo tienes, instálalo con:
+
+   pip install python-prctl
+
+2. Ejecuta la práctica con el siguiente comando:
+
+   make
+
+3. Cuando se te pida, introduce la ruta del archivo que quieres consultar. Por ejemplo:
+
+   Introduce la ruta: /home/usuario/documentos/ejemplo.txt
+
+   El contenido del archivo se mostrará por pantalla.

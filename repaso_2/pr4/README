@@ -1,0 +1,20 @@
+# Práctica 4: Cliente-Servidor mediante Sockets UDS
+
+## Cómo ejecutar
+
+1. Arrancar el servidor:
+   - Comando: `make serv4`
+   - Por defecto el servidor usará el socket `/tmp/grupo5`
+   - Opcionalmente, puedes cambiar la ruta del socket así: `make serv4 SOCKET=/ruta/deseada`
+
+2. En otra terminal, arrancar el cliente:
+   - Comando: `make cli4`
+   - Por defecto el cliente se conectará al socket `/tmp/grupo5`
+   - Opcionalmente, puedes cambiar la ruta del socket así: `make cli4 SOCKET=/ruta/deseada`
+
+## Notas importantes
+
+- El cliente solicita la ruta de un fichero y muestra el contenido que le envía el servidor.
+- El servidor permanece activo después de atender a un cliente.
+- Para detener el servidor pulsa `Ctrl+C`.
+- El socket se crea en `/tmp` y se elimina automáticamente al cerrar el servidor.

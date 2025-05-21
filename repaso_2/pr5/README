@@ -1,0 +1,23 @@
+# Práctica 5: Cliente-Servidor mediante Sockets UDP de Internet
+
+## Descripción
+Sistema cliente-servidor usando sockets UDP (dominio AF_INET).  
+El cliente solicita la fecha y hora actual al servidor.
+
+## Cómo ejecutar
+
+1. Arrancar el servidor:
+   - Comando: make serv5
+   - (por defecto escucha en el puerto 5005)
+   - Si quieres usar otro puerto: make serv5 PORT=otro_puerto
+
+2. Arrancar el cliente (en otra terminal):
+   - Comando: make cli5
+   - (por defecto se conecta a 127.0.0.1:5005)
+   - Si quieres conectar a otra IP y puerto: make cli5 HOST=otra_ip PORT=otro_puerto
+
+## Notas importantes
+
+- El proceso del servidor se llama `serv5` y el del cliente `cli5` (usando `prctl`).
+- El servidor permanece activo para atender múltiples peticiones.
+- Para detener el servidor pulsa `Ctrl+C`.

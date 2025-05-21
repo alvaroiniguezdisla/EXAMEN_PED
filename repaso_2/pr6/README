@@ -1,0 +1,39 @@
+# Práctica 6: Cliente-Servidor mediante Sockets TCP de Internet
+
+## Descripción
+Sistema cliente-servidor usando sockets TCP (dominio AF_INET).  
+El cliente solicita el contenido de un fichero al servidor, enviando su ruta absoluta.  
+El servidor responde con el contenido del fichero o un mensaje de error.
+
+## Cómo ejecutar
+
+1. **Arrancar el servidor** (en una terminal):
+   - Comando:
+     ```bash
+     make serv6
+     ```
+   - Por defecto escucha en el puerto `5006`.
+   - Puedes usar otro puerto así:
+     ```bash
+     make serv6 PORT=otro_puerto
+     ```
+
+2. **Arrancar el cliente** (en otra terminal):
+   - Comando:
+     ```bash
+     make cli6
+     ```
+   - Por defecto se conecta a `127.0.0.1:5006`.
+   - Puedes conectarte a otro host/puerto así:
+     ```bash
+     make cli6 HOST=otra_ip PORT=otro_puerto
+     ```
+
+## Notas importantes
+
+- El proceso del servidor se llama `serv6` y el del cliente `cli6` (gracias a `prctl`).
+- El servidor se mantiene activo y acepta múltiples conexiones secuenciales.
+- El cliente solicita una **ruta completa de archivo** (por ejemplo: `/etc/hosts`).
+- Si el fichero existe, se envía su contenido; si no, se muestra un error.
+- Para detener el servidor, pulsa `Ctrl+C`.
+

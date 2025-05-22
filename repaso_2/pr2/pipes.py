@@ -3,9 +3,9 @@ import sys
 import prctl
 
 def main():
-    # Pipe cliente -> servidor
+    # Pipe hijo -> servidor
     r1, w1 = os.pipe()
-    # Pipe servidor -> cliente
+    # Pipe padre -> cliente
     r2, w2 = os.pipe()
 
     pid = os.fork()
@@ -14,8 +14,8 @@ def main():
         # Proceso padre - Cliente
         prctl.set_name("cli2")
 
-        os.close(r1)  # No lee del pipe cliente->servidor
-        os.close(w2)  # No escribe al pipe servidor->cliente
+        os.close(r1)  # No lee del pipe hijo->servidor
+        os.close(w2)  # No escribe al pipe padre->cliente
 
         try:
             w1 = os.fdopen(w1, 'w')
@@ -42,8 +42,8 @@ def main():
         # Proceso hijo - Servidor
         prctl.set_name("serv2")
 
-        os.close(w1)  # No escribe al pipe cliente->servidor
-        os.close(r2)  # No lee del pipe servidor->cliente
+        os.close(w1)  # No escribe al pipe padre->servidor
+        os.close(r2)  # No lee del pipe hijo->cliente
 
         try:
             r1 = os.fdopen(r1, 'r')

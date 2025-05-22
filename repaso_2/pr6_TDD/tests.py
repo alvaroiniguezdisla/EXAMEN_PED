@@ -1,6 +1,6 @@
 # test.py
 import unittest
-import servidor  # importa la función que vayas a probar
+import servidor  
 
 class TestServidor(unittest.TestCase):
 
